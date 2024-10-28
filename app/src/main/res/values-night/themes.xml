@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.LebenInDeutschland" parent="Theme.Material3.DynamicColors.Dark.NoActionBar">
+
+    </style>
+</resources>
