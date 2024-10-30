@@ -2,7 +2,6 @@ package com.marktkachenko.lebenindeutschland.settings
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 
 class Preferences(context: Context) {
 
@@ -13,25 +12,6 @@ class Preferences(context: Context) {
     }
 
     private val preferences: SharedPreferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
-
-
-    fun setTheme(input: Int) {
-        val editor = preferences.edit()
-        editor.putInt(KEY_THEME, input)
-        editor.apply()
-    }
-
-    fun setLand(input: Int){
-        val editor = preferences.edit()
-        editor.putInt(KEY_LAND, input)
-        editor.apply()
-    }
-
-    fun setTargetLanguage(input: Int){
-        val editor = preferences.edit()
-        editor.putInt(KEY_TARGET_LANGUAGE, input)
-        editor.apply()
-    }
 
     fun setSettings(){
         val editor = preferences.edit()

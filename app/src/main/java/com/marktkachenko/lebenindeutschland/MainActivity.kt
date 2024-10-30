@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.marktkachenko.lebenindeutschland.databinding.ActivityMainBinding
 import com.marktkachenko.lebenindeutschland.dialogFragments.LandsDialogFragment
 import com.marktkachenko.lebenindeutschland.settings.Config
-import com.marktkachenko.lebenindeutschland.settings.Preferences
 import com.marktkachenko.lebenindeutschland.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity() {

@@ -3,7 +3,7 @@ package com.marktkachenko.lebenindeutschland.enums
 import com.marktkachenko.lebenindeutschland.R
 
 enum class Lands (val text: Int, val value: Int) {
-    BADEN_WÜRTTEMBERG(R.string.baden_württemberg, 1),
+    BADEN_WUERTTEMBERG(R.string.baden_württemberg, 1),
     BAVARIA(R.string.bavaria, 2),
     BERLIN(R.string.berlin, 3),
     BRANDENBURG(R.string.brandenburg, 4),
