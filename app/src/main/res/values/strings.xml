@@ -3,23 +3,25 @@
 
 
     <string name="test_menu">Tests</string>
-    <string name="statistic_menu">Statistiken</string>
-    <string name="search_menu">Suchen</string>
-    <string name="settings_menu">Einstellungen</string>
+    <string name="statistic_menu">Statistic</string>
+    <string name="settings_menu">Settings</string>
 
 
-    <!-- Preference Titles -->
-    <string name="preferences_header">Präferenzen</string>
-    <string name="about_header">Über App</string>
 
-    <!-- Messages Preferences -->
-    <string name="theme_title">Thema</string>
-    <string name="land_title">Bundesland</string>
+    <!-- Settings header -->
+    <string name="preferences_header">Preferences</string>
+    <string name="about_header">About app</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- Settings title -->
+    <string name="theme_title">Theme</string>
+    <string name="land_title">Land</string>
+    <string name="target_language_title">Target language</string>
+    <string name="version_title">Version</string>
+    <string name="open_source_code_title">Open source code</string>
+
+    <!-- Settings subtitle -->
+    <string name="theme_subtitle">Light or dark theme for your app</string>
+    <string name="land_subtitle">Your land where you live</string>
+    <string name="target_language_subtitle">The language into which the translation takes place</string>
+    <string name="open_source_code_subtitle">View open source code on GitHub</string>
 </resources>
