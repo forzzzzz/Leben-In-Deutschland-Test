@@ -6,6 +6,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.marktkachenko.lebenindeutschland.databinding.ActivityMainBinding
+import com.marktkachenko.lebenindeutschland.dialogFragments.LandsDialogFragment
+import com.marktkachenko.lebenindeutschland.settings.Config
+import com.marktkachenko.lebenindeutschland.settings.Preferences
+import com.marktkachenko.lebenindeutschland.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -18,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        if (Config.land == 0){
+            LandsDialogFragment().show(supportFragmentManager,  LandsDialogFragment.TAG_LANDS_DIALOG)
+        }
 
         binding.bottomNavigation.selectedItemId = R.id.test
         showFragment(TestFragment())

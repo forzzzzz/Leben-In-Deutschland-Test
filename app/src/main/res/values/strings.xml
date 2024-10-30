@@ -5,6 +5,30 @@
     <string name="test_menu">Tests</string>
     <string name="statistic_menu">Statistic</string>
     <string name="settings_menu">Settings</string>
+    <string name="version_error">Unknown</string>
+    
+    <!-- Lands -->
+    <string name="baden_württemberg">Baden-Württemberg</string>
+    <string name="bavaria">Bavaria</string>
+    <string name="berlin">Berlin</string>
+    <string name="brandenburg">Brandenburg</string>
+    <string name="bremen">Bremen</string>
+    <string name="hamburg">Hamburg</string>
+    <string name="hesse">Hesse</string>
+    <string name="lower_saxony">Lower Saxony</string>
+    <string name="mecklenburg_vorpommern">Mecklenburg-Vorpommern</string>
+    <string name="north_rhine_westphalia">North Rhine-Westphalia</string>
+    <string name="rhineland_palatinate">Rhineland-Palatinate</string>
+    <string name="saarland">Saarland</string>
+    <string name="saxony">Saxony</string>
+    <string name="saxony_anhalt">Saxony-Anhalt</string>
+    <string name="schleswig_holstein">Schleswig-Holstein</string>
+    <string name="thuringia">Thuringia</string>
+
+
+    <!-- Dialogs strings -->
+    <string name="cancel_dialog">Cancel</string>
+    <string name="ok_dialog">OK</string>
 
 
 
@@ -24,4 +48,9 @@
     <string name="land_subtitle">Your land where you live</string>
     <string name="target_language_subtitle">The language into which the translation takes place</string>
     <string name="open_source_code_subtitle">View open source code on GitHub</string>
+
+    <!-- Settings data -->
+    <string name="theme_element_1">System</string>
+    <string name="theme_element_2">Light</string>
+    <string name="theme_element_3">Dark</string>
 </resources>

@@ -4,8 +4,6 @@
 
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/baseline_settings_24"
         android:title="@string/settings_menu"
-        android:contentDescription="@string/search_menu"
         app:showAsAction="never" />
 </menu>

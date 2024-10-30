@@ -1,7 +1,8 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -25,5 +26,222 @@
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/preferencesHeaderTextView"
+                style="@style/settingsHeaderText"
+                android:text="@string/preferences_header"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/themeConstraintLayout"
+                style="@style/settingsLayout"
+                android:layout_marginTop="8dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/themeImageView"
+                    style="@style/settingsImage"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/themeHorizontalScroll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_light_mode_24"/>
+
+                <TextView
+                    android:id="@+id/themeTitleText"
+                    style="@style/settingsTitleText"
+                    android:text="@string/theme_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/themeImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/themeSubtitleText"
+                    style="@style/settingsSubtitleText"
+                    android:text="@string/theme_subtitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/themeImageView"
+                    app:layout_constraintTop_toBottomOf="@id/themeTitleText" />
+
+                <HorizontalScrollView
+                    android:id="@+id/themeHorizontalScroll"
+                    style="@style/settingsHorizontalScroll"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/themeImageView"
+                    app:layout_constraintTop_toBottomOf="@id/themeSubtitleText">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/themeButtonToggleGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+
+                            <Button
+                                android:id="@+id/themeAutoButton"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/theme_element_1" />
+
+                            <Button
+                                android:id="@+id/themeLightButton"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/theme_element_2" />
+
+                            <Button
+                                android:id="@+id/themeDarkButton"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/theme_element_3" />
+
+                        </com.google.android.material.button.MaterialButtonToggleGroup>
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/landConstraintLayout"
+                style="@style/settingsLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/landImage"
+                    style="@style/settingsImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_language_24" />
+
+                <TextView
+                    android:id="@+id/landTitleText"
+                    style="@style/settingsTitleText"
+                    android:text="@string/land_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/landImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/landSubtitleText"
+                    style="@style/settingsSubtitleText"
+                    android:text="@string/land_subtitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/landImage"
+                    app:layout_constraintTop_toBottomOf="@id/landTitleText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/targetLanguageConstraintLayout"
+                style="@style/settingsLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/targetLanguageImage"
+                    style="@style/settingsImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_translate_24" />
+
+                <TextView
+                    android:id="@+id/targetLanguageTitleText"
+                    style="@style/settingsTitleText"
+                    android:text="@string/target_language_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/targetLanguageImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/targetLanguageSubtitleText"
+                    style="@style/settingsSubtitleText"
+                    android:text="@string/target_language_subtitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/targetLanguageImage"
+                    app:layout_constraintTop_toBottomOf="@id/targetLanguageTitleText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/aboutHeaderTextView"
+                style="@style/settingsHeaderText"
+                android:text="@string/about_header"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/versionConstraintLayout"
+                style="@style/settingsLayout"
+                android:layout_marginTop="8dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/versionImage"
+                    style="@style/settingsImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_info_outline_24" />
+
+                <TextView
+                    android:id="@+id/versionTitleText"
+                    style="@style/settingsTitleText"
+                    android:text="@string/version_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/versionImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/versionSubtitleText"
+                    style="@style/settingsSubtitleText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/versionImage"
+                    app:layout_constraintTop_toBottomOf="@id/versionTitleText"
+                    tool:text="1.0"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/openSourceCodeConstraintLayout"
+                style="@style/settingsLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/openSourceCodeImage"
+                    style="@style/settingsImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_code_24" />
+
+                <TextView
+                    android:id="@+id/openSourceCodeTitleText"
+                    style="@style/settingsTitleText"
+                    android:text="@string/open_source_code_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/openSourceCodeImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/openSourceCodeSubtitleText"
+                    style="@style/settingsSubtitleText"
+                    android:text="@string/open_source_code_subtitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/openSourceCodeImage"
+                    app:layout_constraintTop_toBottomOf="@id/openSourceCodeTitleText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
