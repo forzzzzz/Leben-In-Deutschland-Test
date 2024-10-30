@@ -25,6 +25,39 @@
     <string name="schleswig_holstein">Schleswig-Holstein</string>
     <string name="thuringia">Thuringia</string>
 
+    <!-- Languages -->
+    <string name="arabic">Arabic</string>
+    <string name="bulgarian">Bulgarian</string>
+    <string name="chinese_simplified">Chinese (simplified)</string>
+    <string name="chinese_traditional">Chinese (traditional)</string>
+    <string name="czech">Czech</string>
+    <string name="danish">Danish</string>
+    <string name="english_american">English (American)</string>
+    <string name="english_british">English (British)</string>
+    <string name="estonian">Estonian</string>
+    <string name="finnish">Finnish</string>
+    <string name="french">French</string>
+    <string name="german">German</string>
+    <string name="greek">Greek</string>
+    <string name="hungarian">Hungarian</string>
+    <string name="indonesian">Indonesian</string>
+    <string name="italian">Italian</string>
+    <string name="japanese">Japanese</string>
+    <string name="korean">Korean</string>
+    <string name="latvian">Latvian</string>
+    <string name="lithuanian">Lithuanian</string>
+    <string name="norwegian_bokmål">Norwegian (bokmål)</string>
+    <string name="polish">Polish</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="romanian">Romanian</string>
+    <string name="russian">Russian</string>
+    <string name="slovak">Slovak</string>
+    <string name="slovenian">Slovenian</string>
+    <string name="spanish">Spanish</string>
+    <string name="swedish">Swedish</string>
+    <string name="turkish">Turkish</string>
+    <string name="ukrainian">Ukrainian</string>
+
 
     <!-- Dialogs strings -->
     <string name="cancel_dialog">Cancel</string>
@@ -53,4 +86,7 @@
     <string name="theme_element_1">System</string>
     <string name="theme_element_2">Light</string>
     <string name="theme_element_3">Dark</string>
+
+    <!-- URL -->
+    <string name="git_hub_url">https://github.com/forzzzzz/Leben-In-Deutschland-Test</string>
 </resources>

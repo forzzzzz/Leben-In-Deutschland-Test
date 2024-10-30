@@ -10,8 +10,10 @@ import com.google.android.material.button.MaterialButtonToggleGroup
 import com.marktkachenko.lebenindeutschland.Application
 import com.marktkachenko.lebenindeutschland.R
 import com.marktkachenko.lebenindeutschland.databinding.SettingsActivityBinding
+import com.marktkachenko.lebenindeutschland.dialogFragments.DeepLLanguagesDialogFragment
 import com.marktkachenko.lebenindeutschland.dialogFragments.LandsDialogFragment
 import com.marktkachenko.lebenindeutschland.enums.Themes
+import com.marktkachenko.lebenindeutschland.utils.InteractionAndroid
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -50,6 +52,19 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.landConstraintLayout.setOnClickListener {
             LandsDialogFragment().show(supportFragmentManager,  LandsDialogFragment.TAG_LANDS_DIALOG)
+        }
+
+        binding.targetLanguageConstraintLayout.setOnClickListener {
+            DeepLLanguagesDialogFragment().show(supportFragmentManager,   DeepLLanguagesDialogFragment.TAG_DEEPL_LANGUAGES_DIALOG)
+        }
+
+        binding.versionConstraintLayout.setOnLongClickListener {
+            InteractionAndroid.copyToClipboard(getAppVersionName(), this)
+            true
+        }
+
+        binding.openSourceCodeConstraintLayout.setOnClickListener {
+            InteractionAndroid.openUrl(getString(R.string.git_hub_url), this)
         }
 
 

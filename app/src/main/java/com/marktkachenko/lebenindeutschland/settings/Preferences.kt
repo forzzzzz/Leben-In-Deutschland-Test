@@ -2,6 +2,8 @@ package com.marktkachenko.lebenindeutschland.settings
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.marktkachenko.lebenindeutschland.enums.DeepLLanguages
+import java.util.Locale
 
 class Preferences(context: Context) {
 
@@ -17,7 +19,7 @@ class Preferences(context: Context) {
         val editor = preferences.edit()
         editor.putInt(KEY_THEME, Config.theme)
         editor.putInt(KEY_LAND, Config.land)
-        editor.putInt(KEY_TARGET_LANGUAGE, Config.targetLanguage)
+        editor.putString(KEY_TARGET_LANGUAGE, Config.targetLanguage)
         editor.apply()
     }
 
@@ -33,8 +35,13 @@ class Preferences(context: Context) {
         return preferences.getInt(KEY_LAND, 0)
     }
 
-    private fun getTargetLanguage(): Int{
-        return preferences.getInt(KEY_TARGET_LANGUAGE, 0)
+    private fun getTargetLanguage(): String {
+        var defaultLanguage = Locale.getDefault().language.uppercase()
+        if (defaultLanguage == "EN"){
+            defaultLanguage = DeepLLanguages.ENGLISH_AMERICAN.value
+        }
+
+        return preferences.getString(KEY_TARGET_LANGUAGE, defaultLanguage).toString()
     }
 
 
