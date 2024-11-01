@@ -1,4 +1,4 @@
-package com.marktkachenko.lebenindeutschland.enums
+package com.marktkachenko.lebenindeutschland.models.deepLTranslate
 
 import com.marktkachenko.lebenindeutschland.R
 

@@ -17,11 +17,11 @@
         android:theme="@style/Theme.LebenInDeutschland"
         tools:targetApi="31">
         <activity
-            android:name=".settings.SettingsActivity"
+            android:name=".screens.settings.SettingsActivity"
             android:exported="false"
             android:label="@string/settings_menu" />
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

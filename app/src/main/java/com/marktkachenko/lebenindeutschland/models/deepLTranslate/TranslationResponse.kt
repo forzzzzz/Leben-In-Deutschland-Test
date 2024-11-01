@@ -1,4 +1,4 @@
-package com.marktkachenko.lebenindeutschland.models
+package com.marktkachenko.lebenindeutschland.models.deepLTranslate
 
 data class TranslationResponse(
     val translations: List<Translation>

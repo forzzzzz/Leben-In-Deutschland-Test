@@ -1,6 +1,5 @@
-package com.marktkachenko.lebenindeutschland.services
+package com.marktkachenko.lebenindeutschland.models.deepLTranslate
 
-import com.marktkachenko.lebenindeutschland.models.TranslationResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.Headers

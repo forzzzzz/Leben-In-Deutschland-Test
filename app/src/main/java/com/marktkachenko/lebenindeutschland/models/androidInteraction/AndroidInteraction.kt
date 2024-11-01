@@ -1,4 +1,4 @@
-package com.marktkachenko.lebenindeutschland.utils
+package com.marktkachenko.lebenindeutschland.models.androidInteraction
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -8,8 +8,11 @@ import android.net.Uri
 import android.os.Build
 import android.widget.Toast
 
-object InteractionAndroid {
-    fun copyToClipboard(string: String, context: Context){
+class AndroidInteraction(
+    private val context: Context
+) : AndroidInteractionRepository {
+
+    override fun copyToClipboard(string: String){
         val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clipData = ClipData.newPlainText(null, string)
         clipboardManager.setPrimaryClip(clipData)
@@ -19,8 +22,10 @@ object InteractionAndroid {
         }
     }
 
-    fun openUrl(string: String, context: Context){
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(string))
+    override fun openUrl(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
         context.startActivity(intent)
     }
 }

@@ -1,4 +1,4 @@
-package com.marktkachenko.lebenindeutschland.enums
+package com.marktkachenko.lebenindeutschland.models.settings
 
 import com.marktkachenko.lebenindeutschland.R
 

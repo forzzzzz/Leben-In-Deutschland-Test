@@ -1,4 +1,4 @@
-package com.marktkachenko.lebenindeutschland
+package com.marktkachenko.lebenindeutschland.screens.main.tabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -4,19 +4,16 @@ import android.app.Application
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.color.DynamicColors
-import com.marktkachenko.lebenindeutschland.settings.Config
-import com.marktkachenko.lebenindeutschland.settings.Preferences
 
-class Application: Application() {
-    val preferences: Preferences by lazy {
-        Preferences(this)
-    }
+class Application : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        preferences.loadConfig()
 
-        when (Config.theme) {
+        Repositories.init(this)
+        val appSettings = Repositories.appSettings
+
+        when (appSettings.getThemeId()) {
             -1 -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }

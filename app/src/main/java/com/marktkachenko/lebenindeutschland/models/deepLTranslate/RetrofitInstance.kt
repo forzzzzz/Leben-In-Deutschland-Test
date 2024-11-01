@@ -1,6 +1,5 @@
-package com.marktkachenko.lebenindeutschland.utils
+package com.marktkachenko.lebenindeutschland.models.deepLTranslate
 
-import com.marktkachenko.lebenindeutschland.services.DeepLApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
