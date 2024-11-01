@@ -24,6 +24,28 @@
     <string name="saxony_anhalt">Saxony-Anhalt</string>
     <string name="schleswig_holstein">Schleswig-Holstein</string>
     <string name="thuringia">Thuringia</string>
+    
+    <!-- Topics -->
+    <string name="constitutional_bodies">Constitutional bodies</string>
+    <string name="constitutional_principles">Constitutional principles</string>
+    <string name="federalism">Federalism</string>
+    <string name="social_system">Social system</string>
+    <string name="fundamental_rights">Fundamental rights</string>
+    <string name="elections_and_participation">Elections and participation</string>
+    <string name="political_parties">Political parties</string>
+    <string name="tasks_of_the_state">Tasks of the state</string>
+    <string name="duties_of_the_state">Duties of the state</string>
+    <string name="state_symbols">State symbols</string>
+    <string name="municipality">Municipality</string>
+    <string name="law_and_everyday_life">Law and everyday life</string>
+    <string name="national_socialism_and_its_consequences">National Socialism and its consequences</string>
+    <string name="important_stages_after_1945">Important stages after 1945</string>
+    <string name="reunification">Reunification</string>
+    <string name="germany_in_europe">Germany in Europe</string>
+    <string name="religious_diversity">Religious diversity</string>
+    <string name="education">Education</string>
+    <string name="history_of_migration">History of migration</string>
+    <string name="intercultural_coexistence">Intercultural coexistence</string>
 
     <!-- Languages -->
     <string name="arabic">Arabic</string>
@@ -57,6 +79,19 @@
     <string name="swedish">Swedish</string>
     <string name="turkish">Turkish</string>
     <string name="ukrainian">Ukrainian</string>
+
+    <!-- Statistics -->
+    <string name="at_least_once_wrong">At least once wrong</string>
+    <string name="mostly_wrong">Mostly wrong</string>
+    <string name="last_answer_wrong">Last answer wrong</string>
+    <string name="not_answered_yet">Not answered yet</string>
+    <string name="last_answer_right">Last answer right</string>
+    <string name="mostly_right">Mostly right</string>
+
+    <!-- Themes -->
+    <string name="politics_in_democracy">Politics in democracy</string>
+    <string name="history_and_responsibility">History and responsibility</string>
+    <string name="people_and_society">People and society</string>
 
 
     <!-- Dialogs strings -->

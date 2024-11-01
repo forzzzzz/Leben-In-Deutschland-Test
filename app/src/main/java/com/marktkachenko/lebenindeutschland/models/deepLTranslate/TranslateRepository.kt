@@ -4,7 +4,7 @@ import com.marktkachenko.lebenindeutschland.BuildConfig
 
 interface TranslateRepository {
 
-    suspend fun translateText(texts: List<String>, targetLanguage: String): List<String>
+    suspend fun translateText(texts: List<String>): List<String>
 
     companion object{
         const val API_KEY = BuildConfig.DEEPL_API_KEY

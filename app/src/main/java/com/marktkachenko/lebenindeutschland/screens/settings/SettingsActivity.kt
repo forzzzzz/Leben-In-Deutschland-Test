@@ -12,7 +12,7 @@ import com.marktkachenko.lebenindeutschland.Repositories
 import com.marktkachenko.lebenindeutschland.databinding.SettingsActivityBinding
 import com.marktkachenko.lebenindeutschland.screens.dialogs.DeepLLanguagesDialogFragment
 import com.marktkachenko.lebenindeutschland.screens.dialogs.LandsDialogFragment
-import com.marktkachenko.lebenindeutschland.models.settings.Themes
+import com.marktkachenko.lebenindeutschland.models.settings.AppThemes
 import com.marktkachenko.lebenindeutschland.utils.viewModelCreator
 
 class SettingsActivity : AppCompatActivity() {
@@ -109,7 +109,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun loadThemeButtonToggleGroup(buttonToggleGroup: MaterialButtonToggleGroup, value: Int) {
-        Themes.entries.find { it.value == value }?.let { themeEntry ->
+        AppThemes.entries.find { it.value == value }?.let { themeEntry ->
             buttonToggleGroup.check(themeEntry.buttonId)
         }
     }

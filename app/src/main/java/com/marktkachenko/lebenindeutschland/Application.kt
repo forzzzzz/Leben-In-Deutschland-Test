@@ -11,6 +11,7 @@ class Application : Application() {
         super.onCreate()
 
         Repositories.init(this)
+
         val appSettings = Repositories.appSettings
 
         when (appSettings.getThemeId()) {
