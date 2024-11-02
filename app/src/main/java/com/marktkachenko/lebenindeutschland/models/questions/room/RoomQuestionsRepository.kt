@@ -31,6 +31,15 @@ class RoomQuestionsRepository(
         }
     }
 
+    override fun getIdQuestionsWithImage(): List<IdTuple>? {
+        return try {
+            questionsDao.findIdWithImage()
+        } catch (e: Exception) {
+            Log.e("DatabaseError", "Error fetching IDs with image: ${e.message}", e)
+            null
+        }
+    }
+
     override fun getIdQuestionsByIsFavorite(isFavorite: Int): List<IdTuple>? {
         return try {
             questionsDao.findIdByIsFavorite(isFavorite)

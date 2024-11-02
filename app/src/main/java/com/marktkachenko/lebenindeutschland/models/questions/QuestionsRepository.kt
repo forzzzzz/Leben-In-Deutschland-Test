@@ -10,6 +10,8 @@ interface QuestionsRepository {
 
     fun getIdQuestionsByTopic(topic: Int): List<IdTuple>?
 
+    fun getIdQuestionsWithImage(): List<IdTuple>?
+
     fun getIdQuestionsByIsFavorite(isFavorite: Int): List<IdTuple>?
 
     fun getIdQuestionsByStatistic(statistic: Int): List<IdTuple>?

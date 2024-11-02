@@ -16,7 +16,7 @@ data class QuestionDBEntity(
     @ColumnInfo(name = "answer_3") val answer3: String,
     @ColumnInfo(name = "answer_4") val answer4: String,
     @ColumnInfo(name = "correct_answer") val correctAnswer: Int,
-    val image: Int,
+    @ColumnInfo(defaultValue = "0") val image: String,
     val theme: Int,
     val topic: Int,
     @ColumnInfo(name = "last_answer", defaultValue = "-1") val lastAnswer: Int,

@@ -15,7 +15,7 @@ data class TestTuple(
     @ColumnInfo(name = "answer_3") val answer3: String,
     @ColumnInfo(name = "answer_4") val answer4: String,
     @ColumnInfo(name = "correct_answer") val correctAnswer: Int,
-    val image: Int,
+    val image: String,
     val topic: Int,
     @ColumnInfo(name = "last_answer") val lastAnswer: Int,
     @ColumnInfo(name = "number_of_correct_answers") val numberOfCorrectAnswers: Int,

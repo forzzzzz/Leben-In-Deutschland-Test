@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "70dc6c1511e177c545a5066c9650e45f",
+    "identityHash": "70b42745f72268ec916752591b117bc6",
     "entities": [
       {
         "tableName": "questions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `number` INTEGER NOT NULL, `question` TEXT NOT NULL, `answer_1` TEXT NOT NULL, `answer_2` TEXT NOT NULL, `answer_3` TEXT NOT NULL, `answer_4` TEXT NOT NULL, `correct_answer` INTEGER NOT NULL, `image` INTEGER NOT NULL, `theme` INTEGER NOT NULL, `topic` INTEGER NOT NULL, `last_answer` INTEGER NOT NULL DEFAULT -1, `number_of_correct_answers` INTEGER NOT NULL DEFAULT 0, `number_of_incorrect_answers` INTEGER NOT NULL DEFAULT 0, `statistic` INTEGER NOT NULL DEFAULT 4, `is_favorite` INTEGER NOT NULL DEFAULT 0)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `number` INTEGER NOT NULL, `question` TEXT NOT NULL, `answer_1` TEXT NOT NULL, `answer_2` TEXT NOT NULL, `answer_3` TEXT NOT NULL, `answer_4` TEXT NOT NULL, `correct_answer` INTEGER NOT NULL, `image` TEXT NOT NULL DEFAULT '0', `theme` INTEGER NOT NULL, `topic` INTEGER NOT NULL, `last_answer` INTEGER NOT NULL DEFAULT -1, `number_of_correct_answers` INTEGER NOT NULL DEFAULT 0, `number_of_incorrect_answers` INTEGER NOT NULL DEFAULT 0, `statistic` INTEGER NOT NULL DEFAULT 4, `is_favorite` INTEGER NOT NULL DEFAULT 0)",
         "fields": [
           {
             "fieldPath": "id",
@@ -59,8 +59,9 @@
           {
             "fieldPath": "image",
             "columnName": "image",
-            "affinity": "INTEGER",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'0'"
           },
           {
             "fieldPath": "theme",
@@ -123,7 +124,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '70dc6c1511e177c545a5066c9650e45f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '70b42745f72268ec916752591b117bc6')"
     ]
   }
 }

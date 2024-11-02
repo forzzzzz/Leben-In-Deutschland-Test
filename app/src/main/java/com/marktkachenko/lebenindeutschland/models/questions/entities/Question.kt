@@ -9,7 +9,7 @@ data class Question(
     val answer3: String,
     val answer4: String,
     val correctAnswer: Int,
-    val image: Int,
+    val image: String,
     val theme: Int,
     val topic: Int,
     val lastAnswer: Int,

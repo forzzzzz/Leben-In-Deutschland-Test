@@ -20,6 +20,9 @@ interface QuestionsDao {
     @Query("SELECT id FROM questions WHERE topic = :topic")
     fun findIdByTopic(topic: Int): List<IdTuple>?
 
+    @Query("SELECT id FROM questions WHERE image <> '0'")
+    fun findIdWithImage(): List<IdTuple>?
+
     @Query("SELECT id FROM questions WHERE is_favorite = :isFavorite")
     fun findIdByIsFavorite(isFavorite: Int): List<IdTuple>?
 
