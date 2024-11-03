@@ -3,22 +3,22 @@ package com.marktkachenko.lebenindeutschland.models.questions
 import com.marktkachenko.lebenindeutschland.R
 
 enum class Lands (val nameId: Int, val value: Int) {
-    BADEN_WUERTTEMBERG(R.string.baden_württemberg, 1),
-    BAVARIA(R.string.bavaria, 2),
-    BERLIN(R.string.berlin, 3),
-    BRANDENBURG(R.string.brandenburg, 4),
-    BREMEN(R.string.bremen, 5),
-    HAMBURG(R.string.hamburg, 6),
-    HESSE(R.string.hesse, 7),
-    LOWER_SAXONY(R.string.lower_saxony, 8),
-    MECKLENBURG_VORPOMMERN(R.string.mecklenburg_vorpommern, 9),
-    NORTH_RHINE_WESTPHALIA(R.string.north_rhine_westphalia, 10),
-    RHINELAND_PALATINATE(R.string.rhineland_palatinate, 11),
-    SAARLAND(R.string.saarland, 12),
-    SAXONY(R.string.saxony, 13),
-    SAXONY_ANHALT(R.string.saxony_anhalt, 14),
-    SCHLESWIG_HOLSTEIN(R.string.schleswig_holstein, 15),
-    THURINGIA(R.string.thuringia, 16)
+    BADEN_WUERTTEMBERG(R.string.baden_württemberg, 21),
+    BAVARIA(R.string.bavaria, 22),
+    BERLIN(R.string.berlin, 23),
+    BRANDENBURG(R.string.brandenburg, 24),
+    BREMEN(R.string.bremen, 25),
+    HAMBURG(R.string.hamburg, 26),
+    HESSE(R.string.hesse, 27),
+    LOWER_SAXONY(R.string.lower_saxony, 28),
+    MECKLENBURG_VORPOMMERN(R.string.mecklenburg_vorpommern, 29),
+    NORTH_RHINE_WESTPHALIA(R.string.north_rhine_westphalia, 30),
+    RHINELAND_PALATINATE(R.string.rhineland_palatinate, 31),
+    SAARLAND(R.string.saarland, 32),
+    SAXONY(R.string.saxony, 33),
+    SAXONY_ANHALT(R.string.saxony_anhalt, 34),
+    SCHLESWIG_HOLSTEIN(R.string.schleswig_holstein, 35),
+    THURINGIA(R.string.thuringia, 36)
 }
 
 enum class Topics(val nameId: Int, val value: Int) {
@@ -30,7 +30,7 @@ enum class Topics(val nameId: Int, val value: Int) {
     ELECTIONS_AND_PARTICIPATION(R.string.elections_and_participation, 6),
     POLITICAL_PARTIES(R.string.political_parties, 7),
     TASKS_OF_THE_STATE(R.string.tasks_of_the_state, 8),
-    DUTIES_OF_THE_STATE(R.string.duties_of_the_state, 9),
+    DUTIES(R.string.duties, 9),
     STATE_SYMBOLS(R.string.state_symbols, 10),
     MUNICIPALITY(R.string.municipality, 11),
     LAW_AND_EVERYDAY_LIFE(R.string.law_and_everyday_life, 12),
