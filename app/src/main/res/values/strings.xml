@@ -6,7 +6,7 @@
     <string name="statistic_menu">Statistic</string>
     <string name="settings_menu">Settings</string>
     <string name="version_error">Unknown</string>
-    
+
     <!-- Lands -->
     <string name="baden_württemberg">Baden-Württemberg</string>
     <string name="bavaria">Bavaria</string>
@@ -24,7 +24,7 @@
     <string name="saxony_anhalt">Saxony-Anhalt</string>
     <string name="schleswig_holstein">Schleswig-Holstein</string>
     <string name="thuringia">Thuringia</string>
-    
+
     <!-- Topics -->
     <string name="constitutional_bodies">Constitutional bodies</string>
     <string name="constitutional_principles">Constitutional principles</string>
@@ -99,7 +99,6 @@
     <string name="ok_dialog">OK</string>
 
 
-
     <!-- Settings header -->
     <string name="preferences_header">Preferences</string>
     <string name="about_header">About app</string>
@@ -121,6 +120,7 @@
     <string name="theme_element_1">System</string>
     <string name="theme_element_2">Light</string>
     <string name="theme_element_3">Dark</string>
+    <string name="theme_element_4">AMOLED</string>
 
     <!-- URL -->
     <string name="git_hub_url">https://github.com/forzzzzz/Leben-In-Deutschland-Test</string>

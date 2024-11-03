@@ -6,6 +6,10 @@
     <style name="Theme.DynamicColor.LebenInDeutschland" parent="Base.Theme.LebenInDeutschland">
 
     </style>
+    
+    <style name="Theme.DynamicColor.AMOLED.LebenInDeutschland" parent="Theme.DynamicColor.LebenInDeutschland">
+        <item name="colorSurface">@color/black_AMOLED</item>
+    </style>
 
     <style name="Theme.LebenInDeutschland" parent="Base.Theme.LebenInDeutschland">
         <item name="colorPrimary">@color/md_theme_primary</item>
@@ -54,5 +58,9 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
+    </style>
+
+    <style name="Theme.AMOLED.LebenInDeutschland" parent="Theme.LebenInDeutschland">
+        <item name="colorSurface">@color/black_AMOLED</item>
     </style>
 </resources>

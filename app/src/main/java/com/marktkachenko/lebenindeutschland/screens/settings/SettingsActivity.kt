@@ -1,12 +1,15 @@
 package com.marktkachenko.lebenindeutschland.screens.settings
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.marktkachenko.lebenindeutschland.BaseActivity
 import com.marktkachenko.lebenindeutschland.R
 import com.marktkachenko.lebenindeutschland.Repositories
 import com.marktkachenko.lebenindeutschland.databinding.SettingsActivityBinding
@@ -15,7 +18,7 @@ import com.marktkachenko.lebenindeutschland.screens.dialogs.LandsDialogFragment
 import com.marktkachenko.lebenindeutschland.models.settings.AppThemes
 import com.marktkachenko.lebenindeutschland.utils.viewModelCreator
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     private lateinit var binding: SettingsActivityBinding
 
@@ -59,16 +62,34 @@ class SettingsActivity : AppCompatActivity() {
         binding.themeButtonToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 val newNightMode = when (checkedId) {
-                    R.id.themeAutoButton -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                    R.id.themeLightButton -> AppCompatDelegate.MODE_NIGHT_NO
-                    R.id.themeDarkButton -> AppCompatDelegate.MODE_NIGHT_YES
+                    R.id.themeAutoButton -> AppThemes.DEFAULT.value
+                    R.id.themeLightButton -> AppThemes.LIGHT.value
+                    R.id.themeDarkButton -> AppThemes.DARK.value
+                    R.id.themeAMOLEDButton -> AppThemes.AMOLED.value
                     else -> return@addOnButtonCheckedListener
                 }
 
                 val currentNightMode = viewModel.themeId.value
                 if (currentNightMode != newNightMode) {
                     viewModel.setThemeId(newNightMode)
+
+                    if (newNightMode == AppThemes.AMOLED.value) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+                            setTheme(R.style.Theme_DynamicColor_AMOLED_LebenInDeutschland)
+                        } else{
+                            setTheme(R.style.Theme_AMOLED_LebenInDeutschland)
+                        }
+                    }else{
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+                            setTheme(R.style.Theme_DynamicColor_LebenInDeutschland)
+                        } else{
+                            setTheme(R.style.Theme_LebenInDeutschland)
+                        }
+                    }
+
                     AppCompatDelegate.setDefaultNightMode(newNightMode)
+
+                    sendThemeChangedBroadcast()
                 }
             }
         }
@@ -122,5 +143,10 @@ class SettingsActivity : AppCompatActivity() {
             e.printStackTrace()
             getString(R.string.version_error)
         }
+    }
+
+    private fun sendThemeChangedBroadcast() {
+        val intent = Intent(ACTION_THEME_CHANGED)
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
     }
 }
