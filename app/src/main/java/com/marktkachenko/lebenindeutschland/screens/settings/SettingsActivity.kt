@@ -16,6 +16,7 @@ import com.marktkachenko.lebenindeutschland.databinding.SettingsActivityBinding
 import com.marktkachenko.lebenindeutschland.screens.dialogs.DeepLLanguagesDialogFragment
 import com.marktkachenko.lebenindeutschland.screens.dialogs.LandsDialogFragment
 import com.marktkachenko.lebenindeutschland.models.settings.AppThemes
+import com.marktkachenko.lebenindeutschland.screens.main.tabs.TestFragmentViewModel
 import com.marktkachenko.lebenindeutschland.utils.viewModelCreator
 
 class SettingsActivity : BaseActivity() {
@@ -23,6 +24,7 @@ class SettingsActivity : BaseActivity() {
     private lateinit var binding: SettingsActivityBinding
 
     private val viewModel by viewModelCreator { SettingsActivityViewModel(Repositories.appSettings, Repositories.androidInteractionRepository) }
+    private val testViewModel by viewModelCreator { TestFragmentViewModel(Repositories.testsRepository, Repositories.appSettings) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +35,14 @@ class SettingsActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-
         viewModel.themeId.observe(this) {
             loadThemeImage(it)
             loadThemeButtonToggleGroup(binding.themeButtonToggleGroup, it)
         }
 
-        viewModel.showLandsDialogEvent.observe(this) {
-            if (it) {
-                LandsDialogFragment().show(supportFragmentManager, LandsDialogFragment.TAG_LANDS_DIALOG)
+        viewModel.showLandsDialogEvent.observe(this) { showDialog ->
+            if (showDialog) {
+                LandsDialogFragment(testViewModel, Repositories.appSettings).show(supportFragmentManager, LandsDialogFragment.TAG_LANDS_DIALOG)
                 viewModel.onLandsDialogShown()
             }
         }

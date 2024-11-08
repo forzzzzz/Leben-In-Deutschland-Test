@@ -14,38 +14,48 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface QuestionsDao {
 
-    @Query("SELECT id FROM questions WHERE theme = :theme")
-    fun findIdByTheme(theme: Int): List<IdTuple>?
+    @Query("SELECT id FROM questions WHERE is_favorite = 1")
+    fun findIdByIsFavorite(): Flow<List<IdTuple>?>
 
-    @Query("SELECT id FROM questions WHERE topic = :topic")
-    fun findIdByTopic(topic: Int): List<IdTuple>?
+    @Query("""
+    SELECT id
+    FROM questions
+    WHERE (topic = :targetLand OR topic BETWEEN :topicStart AND :topicEnd)
+        AND statistic = :statistic
+""")
+    fun finIdByStatistic(statistic: Int, targetLand: Int, topicStart: Int, topicEnd: Int): Flow<List<IdTuple>>
 
-    @Query("SELECT id FROM questions WHERE image <> '0'")
-    fun findIdWithImage(): List<IdTuple>?
+    @Query("""
+    SELECT id
+    FROM questions
+    WHERE topic = :targetLand
+        OR topic BETWEEN :topicStart AND :topicEnd
+""")
+    fun selectId(targetLand: Int, topicStart: Int, topicEnd: Int): Flow<List<IdTuple>>
 
-    @Query("SELECT id FROM questions WHERE is_favorite = :isFavorite")
-    fun findIdByIsFavorite(isFavorite: Int): List<IdTuple>?
+    @Query("""
+    SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, 
+           number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite 
+    FROM questions
+    WHERE topic = :targetLand
+        OR topic BETWEEN :topicStart AND :topicEnd
+""")
+    fun selectQuestions(targetLand: Int, topicStart: Int, topicEnd: Int): Flow<List<TestTuple>>
 
-    @Query("SELECT id FROM questions WHERE statistic = :statistic")
-    fun finIdByStatistic(statistic: Int): List<IdTuple>?
+    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, number_of_correct_answers, number_of_incorrect_answers, is_favorite FROM questions WHERE theme = :theme")
+    fun selectQuestionsByTheme(theme: Int): Flow<List<TestTuple>>
 
-    @Query("SELECT id FROM questions")
-    fun selectId(): List<IdTuple>?
+    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, number_of_correct_answers, number_of_incorrect_answers, is_favorite FROM questions WHERE topic = :topic")
+    fun selectQuestionsByTopic(topic: Int): Flow<List<TestTuple>>
 
-    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite FROM questions")
-    fun selectQuestions(): Flow<List<TestTuple>?>
+    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, number_of_correct_answers, number_of_incorrect_answers, is_favorite FROM questions WHERE (topic = :targetLand OR topic BETWEEN :topicStart AND :topicEnd) AND image <> 0")
+    fun selectQuestionsWithImages(targetLand: Int, topicStart: Int, topicEnd: Int): Flow<List<TestTuple>>
 
-    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite FROM questions WHERE theme = :theme")
-    fun selectQuestionsByTheme(theme: Int): Flow<List<TestTuple>?>
+    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, number_of_correct_answers, number_of_incorrect_answers, is_favorite FROM questions WHERE is_favorite = 1")
+    fun selectQuestionsByIsFavorite(): Flow<List<TestTuple>>
 
-    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite FROM questions WHERE topic = :topic")
-    fun selectQuestionsByTopic(topic: Int): Flow<List<TestTuple>?>
-
-    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite FROM questions WHERE is_favorite = :isFavorite")
-    fun selectQuestionsByIsFavorite(isFavorite: Int): Flow<List<TestTuple>?>
-
-    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, last_answer, number_of_correct_answers, number_of_incorrect_answers, statistic, is_favorite FROM questions WHERE statistic = :statistic")
-    fun selectQuestionsByStatistic(statistic: Int): Flow<List<TestTuple>?>
+    @Query("SELECT id, number, question, answer_1, answer_2, answer_3, answer_4, correct_answer, image, topic, number_of_correct_answers, number_of_incorrect_answers, is_favorite FROM questions WHERE (topic = :targetLand OR topic BETWEEN :topicStart AND :topicEnd) AND statistic = :statistic")
+    fun selectQuestionsByStatistic(statistic: Int, targetLand: Int, topicStart: Int, topicEnd: Int): Flow<List<TestTuple>>
 
 
     @Update(entity = QuestionDBEntity::class)

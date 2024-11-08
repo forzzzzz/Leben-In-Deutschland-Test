@@ -2,6 +2,9 @@
 <resources>
     <color name="black_AMOLED">#000000</color>
 
+    <color name="correct_answer">#B376C140</color>
+    <color name="incorrect_answer">#B3C14040</color>
+
     <color name="md_theme_primary">#415F91</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#D6E3FF</color>

@@ -5,15 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.marktkachenko.lebenindeutschland.R
-import com.marktkachenko.lebenindeutschland.Repositories
 import com.marktkachenko.lebenindeutschland.models.questions.Lands
-import com.marktkachenko.lebenindeutschland.screens.main.MainActivityViewModel
-import com.marktkachenko.lebenindeutschland.utils.viewModelCreator
+import com.marktkachenko.lebenindeutschland.models.settings.AppSettings
+import com.marktkachenko.lebenindeutschland.screens.main.tabs.TestFragmentViewModel
 
-class LandsDialogFragment : DialogFragment() {
-
-    private val viewModel by viewModelCreator {MainActivityViewModel(Repositories.appSettings)}
-
+class LandsDialogFragment(
+    private val viewModel: TestFragmentViewModel,
+    private val appSettings: AppSettings
+) : DialogFragment() {
 
     companion object {
         const val TAG_LANDS_DIALOG = "LANDS_DIALOG"
@@ -24,7 +23,7 @@ class LandsDialogFragment : DialogFragment() {
             val builder = AlertDialog.Builder(activity)
 
             val landNames = Lands.entries.map { getString(it.nameId) }.toTypedArray()
-            var selectedLandIndex = Lands.entries.toTypedArray().indexOfFirst { it.value == viewModel.landId.value }
+            var selectedLandIndex = Lands.entries.toTypedArray().indexOfFirst { it.value == appSettings.getLandId() }
 
             builder.setTitle(getString(R.string.land_title))
                 .setSingleChoiceItems(landNames, selectedLandIndex) { _, which ->
@@ -32,7 +31,8 @@ class LandsDialogFragment : DialogFragment() {
                 }
                 .setPositiveButton(getString(R.string.ok_dialog)) { _, _ ->
                     val selectedLandId = Lands.entries[selectedLandIndex].value
-                    viewModel.setLand(selectedLandId)
+                    appSettings.setLandId(selectedLandId)
+                    viewModel.setLandId(selectedLandId)
                 }
                 .setNegativeButton(getString(R.string.cancel_dialog)) { dialog, _ ->
                     dialog.dismiss()

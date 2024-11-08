@@ -2,10 +2,17 @@ package com.marktkachenko.lebenindeutschland.models.questions.room.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "questions"
+    tableName = "questions",
+    indices = [
+        Index("theme"),
+        Index("id"),
+        Index("topic"),
+        Index("is_favorite")
+    ]
 )
 data class QuestionDBEntity(
     @PrimaryKey(autoGenerate = true) val id: Long,

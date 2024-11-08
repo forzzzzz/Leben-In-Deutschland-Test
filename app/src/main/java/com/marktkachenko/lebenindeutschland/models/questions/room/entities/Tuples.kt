@@ -17,10 +17,8 @@ data class TestTuple(
     @ColumnInfo(name = "correct_answer") val correctAnswer: Int,
     val image: String,
     val topic: Int,
-    @ColumnInfo(name = "last_answer") val lastAnswer: Int,
     @ColumnInfo(name = "number_of_correct_answers") val numberOfCorrectAnswers: Int,
     @ColumnInfo(name = "number_of_incorrect_answers") val numberOfIncorrectAnswers: Int,
-    val statistic: Int,
     @ColumnInfo(name = "is_favorite") val isFavorite: Int
 )
 

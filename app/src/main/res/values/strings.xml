@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Leben In Deutschland Test</string>
+    <string name="app_name" translatable="false">Leben In Deutschland Test</string>
 
 
     <string name="test_menu">Tests</string>
@@ -24,6 +24,8 @@
     <string name="saxony_anhalt">Saxony-Anhalt</string>
     <string name="schleswig_holstein">Schleswig-Holstein</string>
     <string name="thuringia">Thuringia</string>
+
+    <string name="land_number" translatable="false">10</string>
 
     <!-- Topics -->
     <string name="constitutional_bodies">Constitutional bodies</string>
@@ -81,12 +83,19 @@
     <string name="ukrainian">Ukrainian</string>
 
     <!-- Statistics -->
-    <string name="at_least_once_wrong">At least once wrong</string>
-    <string name="mostly_wrong">Mostly wrong</string>
-    <string name="last_answer_wrong">Last answer wrong</string>
-    <string name="not_answered_yet">Not answered yet</string>
-    <string name="last_answer_right">Last answer right</string>
-    <string name="mostly_right">Mostly right</string>
+    <string name="at_least_once_wrong_title">At least once wrong</string>
+    <string name="mostly_wrong_title">Mostly wrong</string>
+    <string name="last_answer_wrong_title">Last answer wrong</string>
+    <string name="not_answered_yet_title">Not answered yet</string>
+    <string name="last_answer_right_title">Last answer right</string>
+    <string name="mostly_right_title">Mostly right</string>
+
+    <string name="at_least_once_wrong_subtitle">Questions answered at least one time wrong</string>
+    <string name="mostly_wrong_subtitle">Questions answered more wrong than right</string>
+    <string name="last_answer_wrong_subtitle">Questions answered wrong the last time</string>
+    <string name="not_answered_yet_subtitle">Questions never answered</string>
+    <string name="last_answer_right_subtitle">Questions answered right the last time</string>
+    <string name="mostly_right_subtitle">Questions answered more right than wrong</string>
 
     <!-- Themes -->
     <string name="politics_in_democracy">Politics in democracy</string>
@@ -122,6 +131,38 @@
     <string name="theme_element_3">Dark</string>
     <string name="theme_element_4">AMOLED</string>
 
+    <!-- Main test cardView -->
+    <string name="main_test_cardView_title" translatable="false">Einbürgerungstest</string>
+    <string name="main_test_cardView_subtitle">33 questions</string>
+    <string name="main_test_cardView_description">Random 33 questions with a 60 minute timer. Everything is like in a real test!</string>
+    <string name="main_test_cardView_action_button">Test</string>
+
+
+    <string name="testsHeader">Questions</string>
+
+    <string name="all_questions_title">All questions</string>
+    <string name="all_questions_subtitle">All general and land questions</string>
+
+    <string name="land_questions_subtitle">Questions specific to your land</string>
+    <string name="error_land_questions_title">Please select your land</string>
+
+    <string name="image_questions_title">Images</string>
+    <string name="image_questions_subtitle">Questions with images</string>
+
+    <string name="is_favorite_questions_title">Favorite</string>
+    <string name="is_favorite_questions_subtitle">Your favorite questions</string>
+
+    <!-- Tests ChipGroup -->
+    <string name="theme_chip">Theme</string>
+    <string name="topic_chip">Topic</string>
+    <string name="others_chip">Others</string>
+
+    <!-- Test -->
+    <string name="timer">Progress:</string>
+    <string name="answered">Answered:</string>
+    <string name="right">Right:</string>
+
     <!-- URL -->
-    <string name="git_hub_url">https://github.com/forzzzzz/Leben-In-Deutschland-Test</string>
+    <string name="git_hub_url" translatable="false">https://github.com/forzzzzz/Leben-In-Deutschland-Test</string>
+
 </resources>

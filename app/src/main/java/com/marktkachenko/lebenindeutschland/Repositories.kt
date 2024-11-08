@@ -7,10 +7,16 @@ import com.marktkachenko.lebenindeutschland.models.androidInteraction.AndroidInt
 import com.marktkachenko.lebenindeutschland.models.deepLTranslate.Translate
 import com.marktkachenko.lebenindeutschland.models.deepLTranslate.TranslateRepository
 import com.marktkachenko.lebenindeutschland.models.questions.QuestionsRepository
+import com.marktkachenko.lebenindeutschland.models.questions.QuestionsService
 import com.marktkachenko.lebenindeutschland.models.questions.room.RoomQuestionsRepository
+import com.marktkachenko.lebenindeutschland.models.questions.room.RoomRoomQuestionsService
 import com.marktkachenko.lebenindeutschland.models.room.AppDataBase
 import com.marktkachenko.lebenindeutschland.models.settings.AppSettings
 import com.marktkachenko.lebenindeutschland.models.settings.Preferences
+import com.marktkachenko.lebenindeutschland.models.statistics.StatisticsRepository
+import com.marktkachenko.lebenindeutschland.models.statistics.StatisticsService
+import com.marktkachenko.lebenindeutschland.models.tests.TestsRepository
+import com.marktkachenko.lebenindeutschland.models.tests.TestsService
 
 object Repositories {
 
@@ -22,8 +28,8 @@ object Repositories {
             .build()
     }
 
-    val questionsRepository: QuestionsRepository by lazy {
-        RoomQuestionsRepository(database.getQuestionsDao())
+    private val roomQuestionsRepository: RoomQuestionsRepository by lazy {
+        RoomRoomQuestionsService(database.getQuestionsDao(), appSettings)
     }
 
     val appSettings: AppSettings by lazy {
@@ -34,8 +40,20 @@ object Repositories {
         AndroidInteraction(applicationContext)
     }
 
-    val translateRepository: TranslateRepository by lazy {
+    private val translateRepository: TranslateRepository by lazy {
         Translate(appSettings)
+    }
+
+    val testsRepository: TestsRepository by lazy {
+        TestsService(roomQuestionsRepository, appSettings, applicationContext)
+    }
+
+    val statisticsRepository: StatisticsRepository by lazy {
+        StatisticsService(roomQuestionsRepository, applicationContext)
+    }
+
+    val questionsRepository: QuestionsRepository by lazy {
+        QuestionsService(roomQuestionsRepository, applicationContext, appSettings, translateRepository)
     }
 
     fun init(context: Context) {

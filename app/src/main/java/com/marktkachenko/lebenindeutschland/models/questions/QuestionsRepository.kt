@@ -1,41 +1,22 @@
 package com.marktkachenko.lebenindeutschland.models.questions
 
-import com.marktkachenko.lebenindeutschland.models.questions.room.entities.IdTuple
-import com.marktkachenko.lebenindeutschland.models.questions.room.entities.TestTuple
-import kotlinx.coroutines.flow.Flow
+import android.widget.ProgressBar
 
 interface QuestionsRepository {
 
-    fun getIdQuestionsByTheme(theme: Int): List<IdTuple>?
+    suspend fun loadQuestions()
 
-    fun getIdQuestionsByTopic(topic: Int): List<IdTuple>?
+    fun getQuestions(): List<Question>
 
-    fun getIdQuestionsWithImage(): List<IdTuple>?
+    fun getCount(): Int
 
-    fun getIdQuestionsByIsFavorite(isFavorite: Int): List<IdTuple>?
+    fun updateQuestions(question: Question, selectedRadioButtonId: Int)
 
-    fun getIdQuestionsByStatistic(statistic: Int): List<IdTuple>?
+    fun translate(question: Question, progressBar: ProgressBar)
 
-    fun getIdQuestions(): List<IdTuple>?
+    fun favorite(question: Question)
 
-    fun getQuestions(): Flow<List<TestTuple>?>
+    fun addListener(listener: QuestionsListener)
 
-    fun getQuestionsByTheme(theme: Int): Flow<List<TestTuple>?>
-
-    fun getQuestionsByTopic(topic: Int): Flow<List<TestTuple>?>
-
-    fun getQuestionsByIsFavorite(isFavorite: Int): Flow<List<TestTuple>?>
-
-    fun getQuestionsByStatistic(statistic: Int): Flow<List<TestTuple>?>
-
-
-    suspend fun updateQuestionStatistic(
-        id: Long,
-        lastAnswer: Int,
-        numberOfCorrectAnswers: Int,
-        numberOfIncorrectAnswers: Int,
-        statistic: Int
-    )
-
-    suspend fun updateQuestionIsFavorite(id: Long, isFavorite: Int)
+    fun removeListener(listener: QuestionsListener)
 }

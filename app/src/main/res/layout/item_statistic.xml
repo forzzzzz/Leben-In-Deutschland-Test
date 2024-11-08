@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/statistic_card_view"
+    style="@style/testsCardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/settingsLayout">
+
+        <View
+            android:id="@+id/statistic_decor_line"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:background="#BA4F4F"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/statistic_icon"
+            style="@style/settingsImage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statistic_decor_line"
+            tool:src="@drawable/baseline_query_stats_24" />
+
+        <TextView
+            android:id="@+id/statistic_title_text"
+            style="@style/settingsTitleText"
+            app:layout_constraintEnd_toStartOf="@id/statistic_number_text"
+            app:layout_constraintStart_toEndOf="@id/statistic_icon"
+            app:layout_constraintTop_toBottomOf="@id/statistic_decor_line"
+            tool:text="@string/at_least_once_wrong_title"/>
+
+        <TextView
+            android:id="@+id/statistic_subtitle_text"
+            style="@style/settingsSubtitleText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/statistic_number_text"
+            app:layout_constraintStart_toEndOf="@id/statistic_icon"
+            app:layout_constraintTop_toBottomOf="@id/statistic_title_text"
+            tool:text="@string/at_least_once_wrong_subtitle"/>
+
+        <TextView
+            android:id="@+id/statistic_number_text"
+            style="@style/settingsNumberText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statistic_decor_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tool:text="30"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

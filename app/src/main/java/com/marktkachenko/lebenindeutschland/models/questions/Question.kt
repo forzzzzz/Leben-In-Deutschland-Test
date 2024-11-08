@@ -1,0 +1,32 @@
+package com.marktkachenko.lebenindeutschland.models.questions
+
+data class Question(
+    val id: Long,
+    val question: String,
+    val translatedQuestion: String?,
+    val answer1: String,
+    val translatedAnswer1: String?,
+    val answer2: String,
+    val translatedAnswer2: String?,
+    val answer3: String,
+    val translatedAnswer3: String?,
+    val answer4: String,
+    val translatedAnswer4: String?,
+    val correctAnswer: Int,
+    val image: Int,
+    val topic: String,
+    val landId: Int,
+    val questionNumber: String,
+    val isCorrectAnswer: Boolean?,
+    val isCheckedAnswer1: Boolean,
+    val isCheckedAnswer2: Boolean,
+    val isCheckedAnswer3: Boolean,
+    val isCheckedAnswer4: Boolean,
+    val answer1Color: Int,
+    val answer2Color: Int,
+    val answer3Color: Int,
+    val answer4Color: Int,
+    val correctAnswersNumber: Int,
+    val incorrectAnswersNumber: Int,
+    val isFavorite: Int
+)

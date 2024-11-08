@@ -6,19 +6,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.fragment.app.Fragment
 import com.marktkachenko.lebenindeutschland.BaseActivity
 import com.marktkachenko.lebenindeutschland.R
-import com.marktkachenko.lebenindeutschland.Repositories
 import com.marktkachenko.lebenindeutschland.databinding.ActivityMainBinding
-import com.marktkachenko.lebenindeutschland.screens.dialogs.LandsDialogFragment
 import com.marktkachenko.lebenindeutschland.models.Fragments
 import com.marktkachenko.lebenindeutschland.models.MainFragments
-import com.marktkachenko.lebenindeutschland.screens.settings.SettingsActivity
 import com.marktkachenko.lebenindeutschland.utils.viewModelCreator
 
 class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val viewModel by viewModelCreator { MainActivityViewModel(Repositories.appSettings) }
+    private val viewModel by viewModelCreator { MainViewModel() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +25,6 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        viewModel.showLandsDialogEvent.observe(this) {
-            if (it) {
-                LandsDialogFragment().show(supportFragmentManager, LandsDialogFragment.TAG_LANDS_DIALOG)
-                viewModel.onLandsDialogShown()
-            }
-        }
 
         binding.bottomNavigation.selectedItemId = Fragments.correctMainFragment.tabId
         showFragment(Fragments.correctMainFragment.fragment)
@@ -52,16 +42,6 @@ class MainActivity : BaseActivity() {
             }
             true
         }
-
-        binding.topAppBar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
-                    true
-                }
-                else -> false
-            }
-        }
     }
 
     private fun showFragment(fragment: Fragment){
@@ -69,5 +49,17 @@ class MainActivity : BaseActivity() {
             .beginTransaction()
             .replace(R.id.main_frame_layout, fragment)
             .commit()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == REQUEST_CODE_CHILD) {
+            recreate()
+        }
+    }
+
+    companion object {
+        const val REQUEST_CODE_CHILD = 0
     }
 }
