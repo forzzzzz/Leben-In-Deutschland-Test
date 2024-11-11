@@ -9,7 +9,7 @@ import com.marktkachenko.lebenindeutschland.models.deepLTranslate.TranslateRepos
 import com.marktkachenko.lebenindeutschland.models.questions.QuestionsRepository
 import com.marktkachenko.lebenindeutschland.models.questions.QuestionsService
 import com.marktkachenko.lebenindeutschland.models.questions.room.RoomQuestionsRepository
-import com.marktkachenko.lebenindeutschland.models.questions.room.RoomRoomQuestionsService
+import com.marktkachenko.lebenindeutschland.models.questions.room.RoomQuestionsService
 import com.marktkachenko.lebenindeutschland.models.room.AppDataBase
 import com.marktkachenko.lebenindeutschland.models.settings.AppSettings
 import com.marktkachenko.lebenindeutschland.models.settings.Preferences
@@ -29,7 +29,7 @@ object Repositories {
     }
 
     private val roomQuestionsRepository: RoomQuestionsRepository by lazy {
-        RoomRoomQuestionsService(database.getQuestionsDao(), appSettings)
+        RoomQuestionsService(database.getQuestionsDao(), appSettings)
     }
 
     val appSettings: AppSettings by lazy {

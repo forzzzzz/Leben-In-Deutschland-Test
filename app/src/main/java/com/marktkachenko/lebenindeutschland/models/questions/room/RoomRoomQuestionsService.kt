@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class RoomRoomQuestionsService(
+class RoomQuestionsService(
     private val questionsDao: QuestionsDao,
     private val appSettings: AppSettings
 ) : RoomQuestionsRepository {
