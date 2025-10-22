@@ -36,7 +36,9 @@
 
 ### Screenshots
 
-<img alt="Screenshot" src="metadata/screenshots/1.png" width="24%"/>
-<img alt="Screenshot" src="metadata/screenshots/2.png" width="24%"/>
-<img alt="Screenshot" src="metadata/screenshots/3.png" width="24%"/>
-<img alt="Screenshot" src="metadata/screenshots/4.png" width="24%"/>
+<div style="display: flex; gap: 10px;">
+  <img alt="Screenshot" src="metadata/screenshots/1.png" width="20%">
+  <img alt="Screenshot" src="metadata/screenshots/2.png" width="20%">
+  <img alt="Screenshot" src="metadata/screenshots/3.png" width="20%">
+  <img alt="Screenshot" src="metadata/screenshots/4.png" width="20%">
+</div>
