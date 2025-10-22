@@ -33,10 +33,9 @@
 - Material 3
 - AMOLED
 
+<div align="center">
 
 ### Screenshots
-
-<div align="center">
 
 <img alt="Screenshot" src="metadata/screenshots/1.png" width="24%"/>
 <img alt="Screenshot" src="metadata/screenshots/2.png" width="24%"/>
