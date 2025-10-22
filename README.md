@@ -36,4 +36,11 @@
 
 ### Screenshots
 
-<img src="metadata/screenshots/1.png" width="20%"> <img src="metadata/screenshots/2.png" width="20%"> <img src="metadata/screenshots/3.png" width="20%"> <img src="metadata/screenshots/4.png" width="20%">
+<div align="center">
+
+<img alt="Screenshot" src="metadata/screenshots/1.png" width="20%"/>
+<img alt="Screenshot" src="metadata/screenshots/2.png" width="20%"/>
+<img alt="Screenshot" src="metadata/screenshots/3.png" width="20%"/>
+<img alt="Screenshot" src="metadata/screenshots/4.png" width="20%"/>
+
+</div>
