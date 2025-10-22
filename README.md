@@ -24,9 +24,9 @@
 ### Features
 
 - Real test simulation
-- Topics and subjects
+- Themes and Topics
 - Statistics
-- Choice of country of residence
+- Choice your land
 - Translation into native language
 - Favorites
 - No internet connection (except for translation)
