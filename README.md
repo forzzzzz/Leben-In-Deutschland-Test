@@ -42,3 +42,7 @@
   <img alt="Screenshot" src="metadata/screenshots/3.png" width="24%">
   <img alt="Screenshot" src="metadata/screenshots/4.png" width="24%">
 </div>
+
+<a href="https://github.com/forzzzzz/Calculator-You/releases/latest">
+      <img alt="GitHub downloads" src="https://img.shields.io/github/downloads/forzzzzz/Calculator-You/total?color=8E4A4B&label=GitHub downloads&style=for-the-badge">
+</a>
