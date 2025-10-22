@@ -36,7 +36,7 @@
 
 ### Screenshots
 
-<div style="display: flex; gap: 10px;">
+<div style="gap: 10px;">
 
   <img alt="Screenshot" src="metadata/screenshots/1.png" width="20%">
   <img alt="Screenshot" src="metadata/screenshots/2.png" width="20%">
